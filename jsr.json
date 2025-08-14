@@ -2,5 +2,5 @@
   "name": "@leavestylecode/alipay-sdk",
   "version": "1.0.0",
   "license": "MIT",
-  "exports": "./mod.ts"
+  "exports": "./src/index.ts"
 }

@@ -1,27 +1,16 @@
-name: Publish to JSR
-
+name: Publish
 on:
   push:
-    tags:
-      - 'v*' # 推送 v1.0.0 这种 tag 会触发发布
+    branches:
+      - main
 
 jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write # ✅ OIDC 必须有
-
+      id-token: write
     steps:
       - uses: actions/checkout@v4
-
-      - name: Install Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-
-      # 如果需要依赖，可以安装
-      - run: npm install
-
-      - name: Publish package to JSR
+      - name: Publish package
         run: npx jsr publish
