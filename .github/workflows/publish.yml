@@ -16,6 +16,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '18'
+      - name: Install dependencies
+        run: npm install --production
       - name: Create minimal JSR config
         run: |
           echo "Creating clean JSR config without test dependencies"
